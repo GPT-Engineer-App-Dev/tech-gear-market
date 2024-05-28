@@ -1,5 +1,4 @@
-import { Box, Flex, HStack, Link, IconButton, useDisclosure, Stack } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Box, Flex, HStack, Link, useDisclosure, Stack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Links = [
@@ -32,13 +31,9 @@ const Navbar = () => {
     <>
       <Box bg="gray.100" px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
+          <button onClick={isOpen ? onClose : onOpen}>
+            {isOpen ? "Close" : "Open"}
+          </button>
           <HStack spacing={8} alignItems={"center"}>
             <Box fontWeight="bold">ElectroShop</Box>
             <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
